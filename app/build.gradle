@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.bw.movie"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'io.janusproject.guava:guava:19.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //Fresco
+    implementation 'com.facebook.fresco:fresco:1.13.0'
+    implementation 'com.facebook.fresco:animated-gif:1.13.0'
+    //webp图
+    implementation 'com.facebook.fresco:animated-webp:1.13.0'
+    implementation 'com.facebook.fresco:webpsupport:1.13.0'
+    implementation 'com.android.support:design:28.0.0'
+    //Tablayout             netscrollView
+    //recyclerView
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    //xrecyclerView
+    implementation 'com.jcodecraeer:xrecyclerview:1.5.9'
+    //http拦截器
+    implementation 'com.squareup.okhttp3:okhttp:3.14.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.1'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //解决获取不到@Subscribe注解的问题
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+    //rxjava+rxandroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.4'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    //retrofit回调适配器采用rxjava进行处理
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    //retrofit2依赖
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+}
